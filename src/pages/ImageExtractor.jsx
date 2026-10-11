@@ -101,7 +101,7 @@ export default function ImageExtractor() {
     <div>
       <div className="mb-8">
         <h1 className="section-title">Image Color Extractor</h1>
-        <p className="text-white/40">Upload an image and extract its dominant color palette.</p>
+        <p className="text-gray-400">Upload an image and extract its dominant color palette.</p>
       </div>
 
       <canvas ref={canvasRef} className="hidden" />
@@ -110,7 +110,7 @@ export default function ImageExtractor() {
         <div>
           <div
             className={`border-2 border-dashed rounded-2xl p-8 text-center transition-colors ${
-              image ? 'border-brand-gold/30' : 'border-white/10 hover:border-white/20'
+              image ? 'border-brand-teal/30' : 'border-gray-200 hover:border-gray-300'
             }`}
             onDrop={handleDrop}
             onDragOver={e => e.preventDefault()}
@@ -123,11 +123,11 @@ export default function ImageExtractor() {
               />
             ) : (
               <div className="py-12">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto text-white/20 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto text-gray-400 mb-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
                 </svg>
-                <p className="text-white/40 mb-2">Drag and drop an image here</p>
-                <p className="text-white/20 text-sm mb-4">PNG, JPG, WebP, or GIF</p>
+                <p className="text-gray-400 mb-2">Drag and drop an image here</p>
+                <p className="text-gray-400 text-sm mb-4">PNG, JPG, WebP, or GIF</p>
                 <button
                   onClick={() => inputRef.current?.click()}
                   className="btn-primary"
@@ -166,7 +166,7 @@ export default function ImageExtractor() {
         <div>
           {loading && (
             <div className="flex items-center justify-center h-48">
-              <div className="w-8 h-8 border-2 border-brand-gold/30 border-t-brand-gold rounded-full animate-spin" />
+              <div className="w-8 h-8 border-2 border-brand-teal/30 border-t-brand-teal rounded-full animate-spin" />
             </div>
           )}
 
@@ -178,12 +178,12 @@ export default function ImageExtractor() {
                   return (
                     <div
                       key={i}
-                      className="w-20 h-20 rounded-xl flex items-center justify-center border border-white/10"
+                      className="w-20 h-20 rounded-xl flex items-center justify-center border border-gray-200"
                       style={{ backgroundColor: color }}
                     >
                       <CopyButton
                         text={color}
-                        className={`text-xs font-mono ${light ? 'text-black/60 hover:text-black' : 'text-white/60 hover:text-white'}`}
+                        className={`text-xs font-mono ${light ? 'text-black/60 hover:text-black' : 'text-gray-500 hover:text-gray-900'}`}
                       />
                     </div>
                   );
@@ -198,20 +198,20 @@ export default function ImageExtractor() {
                 </div>
               </div>
 
-              <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+              <div className="bg-white rounded-xl p-4 border border-gray-200">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-white/50">CSS Variables</span>
-                  <button onClick={handleCopyCSS} className="text-sm text-white/50 hover:text-white/80 transition-colors">
+                  <span className="text-sm font-medium text-gray-500">CSS Variables</span>
+                  <button onClick={handleCopyCSS} className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
                     {copiedCSS ? 'Copied!' : 'Copy'}
                   </button>
                 </div>
-                <pre className="text-sm font-mono text-brand-gold/80 overflow-x-auto">{cssCode}</pre>
+                <pre className="text-sm font-mono text-brand-teal/80 overflow-x-auto">{cssCode}</pre>
               </div>
             </>
           )}
 
           {!loading && colors.length === 0 && !image && (
-            <div className="flex items-center justify-center h-48 text-white/20">
+            <div className="flex items-center justify-center h-48 text-gray-400">
               Upload an image to extract colors
             </div>
           )}

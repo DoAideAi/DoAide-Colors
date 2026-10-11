@@ -70,7 +70,7 @@ export default function PaletteGenerator() {
   const exportAsPNG = async () => {
     const { toPng } = await import('html-to-image');
     if (!paletteRef.current) return;
-    const dataUrl = await toPng(paletteRef.current, { backgroundColor: '#0f0f1a' });
+    const dataUrl = await toPng(paletteRef.current, { backgroundColor: '#F8FAFB' });
     const link = document.createElement('a');
     link.download = 'doaide-palette.png';
     link.href = dataUrl;
@@ -96,12 +96,12 @@ export default function PaletteGenerator() {
       />
       <div className="mb-8">
         <h1 className="section-title">Color Palette Generator</h1>
-        <p className="text-white/40">Generate harmonious 5-color palettes for your design projects.</p>
+        <p className="text-gray-500">Generate harmonious 5-color palettes for your design projects.</p>
       </div>
 
       <div className="flex flex-wrap items-end gap-4 mb-8">
         <div>
-          <label className="block text-sm text-white/50 mb-1.5">Base Color</label>
+          <label className="block text-sm text-gray-500 mb-1.5">Base Color</label>
           <div className="flex items-center gap-2">
             <input
               type="color"
@@ -122,14 +122,14 @@ export default function PaletteGenerator() {
         </div>
 
         <div>
-          <label className="block text-sm text-white/50 mb-1.5">Harmony</label>
+          <label className="block text-sm text-gray-500 mb-1.5">Harmony</label>
           <select
             value={harmony}
             onChange={e => setHarmony(e.target.value)}
             className="input-field text-sm capitalize"
           >
             {harmonies.map(h => (
-              <option key={h} value={h} className="bg-brand-dark capitalize">{h}</option>
+              <option key={h} value={h} className="capitalize">{h}</option>
             ))}
           </select>
         </div>
@@ -160,8 +160,8 @@ export default function PaletteGenerator() {
                       onClick={() => toggleLock(i)}
                       className={`absolute top-3 right-3 p-1.5 rounded-lg transition-all ${
                         locked[i]
-                          ? (light ? 'bg-black/20 text-black' : 'bg-white/20 text-white')
-                          : (light ? 'text-black/30 hover:text-black/60' : 'text-white/30 hover:text-white/60')
+                          ? (light ? 'bg-black/20 text-black' : 'bg-gray-200 text-white')
+                          : (light ? 'text-black/30 hover:text-black/60' : 'text-gray-400 hover:text-gray-500')
                       }`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
@@ -175,19 +175,19 @@ export default function PaletteGenerator() {
                     <span className={`font-mono text-sm font-semibold ${light ? 'text-black/80' : 'text-white/90'}`}>
                       {color.toUpperCase()}
                     </span>
-                    <span className={`text-xs ${light ? 'text-black/50' : 'text-white/40'}`}>
+                    <span className={`text-xs ${light ? 'text-black/50' : 'text-gray-400'}`}>
                       hsl({hsl.h}, {hsl.s}%, {hsl.l}%)
                     </span>
                     <CopyButton
                       text={color}
-                      className={`text-xs ${light ? 'text-black/50 hover:text-black' : 'text-white/40 hover:text-white'}`}
+                      className={`text-xs ${light ? 'text-black/50 hover:text-black' : 'text-gray-400 hover:text-gray-900'}`}
                     />
                   </div>
                 );
               })}
             </div>
-            <div className="bg-brand-dark/80 text-center py-1.5">
-              <span className="text-[10px] text-white/20">Made with DoAide Colors</span>
+            <div className="bg-gray-100 text-center py-1.5">
+              <span className="text-[10px] text-gray-400">Made with DoAide Colors</span>
             </div>
           </div>
 
@@ -207,12 +207,12 @@ export default function PaletteGenerator() {
             />
           </div>
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/60">CSS Variables</span>
+              <span className="text-sm font-medium text-gray-500">CSS Variables</span>
               <CopyButton text={cssCode} label="Copy" />
             </div>
-            <pre className="text-sm font-mono text-brand-gold/80 overflow-x-auto">{cssCode}</pre>
+            <pre className="text-sm font-mono text-brand-teal/80 overflow-x-auto">{cssCode}</pre>
           </div>
         </>
       )}

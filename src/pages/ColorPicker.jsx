@@ -64,13 +64,13 @@ export default function ColorPicker() {
     <div>
       <div className="mb-8">
         <h1 className="section-title">Color Picker</h1>
-        <p className="text-white/40">Pick any color and get values in every format.</p>
+        <p className="text-gray-400">Pick any color and get values in every format.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <div
-            className="w-full h-48 rounded-2xl mb-4 flex items-end justify-between p-4 border border-white/10"
+            className="w-full h-48 rounded-2xl mb-4 flex items-end justify-between p-4 border border-gray-200"
             style={{ backgroundColor: hex }}
           >
             <span className="font-mono text-sm font-bold px-2 py-1 rounded bg-black/30 text-white">
@@ -89,7 +89,7 @@ export default function ColorPicker() {
           />
 
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-white/50 mb-2">Hue</label>
+            <label className="block text-sm font-medium text-gray-500 mb-2">Hue</label>
             <input
               type="range"
               min="0"
@@ -101,7 +101,7 @@ export default function ColorPicker() {
                 background: `linear-gradient(to right, hsl(0,${hsl.s}%,${hsl.l}%), hsl(60,${hsl.s}%,${hsl.l}%), hsl(120,${hsl.s}%,${hsl.l}%), hsl(180,${hsl.s}%,${hsl.l}%), hsl(240,${hsl.s}%,${hsl.l}%), hsl(300,${hsl.s}%,${hsl.l}%), hsl(360,${hsl.s}%,${hsl.l}%))`,
               }}
             />
-            <label className="block text-sm font-medium text-white/50 mb-2">Saturation</label>
+            <label className="block text-sm font-medium text-gray-500 mb-2">Saturation</label>
             <input
               type="range"
               min="0"
@@ -110,7 +110,7 @@ export default function ColorPicker() {
               onChange={e => updateFromHsl(hsl.h, parseInt(e.target.value), hsl.l)}
               className="w-full"
             />
-            <label className="block text-sm font-medium text-white/50 mb-2">Lightness</label>
+            <label className="block text-sm font-medium text-gray-500 mb-2">Lightness</label>
             <input
               type="range"
               min="0"
@@ -123,9 +123,9 @@ export default function ColorPicker() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">HEX</span>
+              <span className="text-sm font-medium text-gray-500">HEX</span>
               <CopyButton text={hex} label="Copy" />
             </div>
             <input
@@ -140,15 +140,15 @@ export default function ColorPicker() {
             />
           </div>
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">RGB</span>
+              <span className="text-sm font-medium text-gray-500">RGB</span>
               <CopyButton text={`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`} label="Copy" />
             </div>
             <div className="flex gap-2">
               {['r', 'g', 'b'].map(ch => (
                 <div key={ch} className="flex-1">
-                  <label className="text-xs text-white/30 uppercase">{ch}</label>
+                  <label className="text-xs text-gray-400 uppercase">{ch}</label>
                   <input
                     type="number"
                     min="0"
@@ -166,9 +166,9 @@ export default function ColorPicker() {
             </div>
           </div>
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">HSL</span>
+              <span className="text-sm font-medium text-gray-500">HSL</span>
               <CopyButton text={`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`} label="Copy" />
             </div>
             <div className="flex gap-2">
@@ -178,7 +178,7 @@ export default function ColorPicker() {
                 { key: 'l', label: 'L', max: 100 },
               ].map(({ key, label, max }) => (
                 <div key={key} className="flex-1">
-                  <label className="text-xs text-white/30">{label}</label>
+                  <label className="text-xs text-gray-400">{label}</label>
                   <input
                     type="number"
                     min="0"
@@ -196,15 +196,15 @@ export default function ColorPicker() {
             </div>
           </div>
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">CMYK</span>
+              <span className="text-sm font-medium text-gray-500">CMYK</span>
               <CopyButton text={`cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`} label="Copy" />
             </div>
             <div className="flex gap-2">
               {['c', 'm', 'y', 'k'].map(ch => (
                 <div key={ch} className="flex-1">
-                  <label className="text-xs text-white/30 uppercase">{ch}</label>
+                  <label className="text-xs text-gray-400 uppercase">{ch}</label>
                   <input
                     type="number"
                     min="0"
@@ -219,13 +219,13 @@ export default function ColorPicker() {
           </div>
 
           {history.length > 0 && (
-            <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
-              <span className="text-sm font-medium text-white/50 block mb-3">Recent Colors</span>
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
+              <span className="text-sm font-medium text-gray-500 block mb-3">Recent Colors</span>
               <div className="flex flex-wrap gap-2">
                 {history.map((c, i) => (
                   <button
                     key={`${c}-${i}`}
-                    className="w-8 h-8 rounded-lg border border-white/10 hover:scale-110 transition-transform"
+                    className="w-8 h-8 rounded-lg border border-gray-200 hover:scale-110 transition-transform"
                     style={{ backgroundColor: c }}
                     onClick={() => updateFromHex(c)}
                     title={c}

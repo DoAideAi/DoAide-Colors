@@ -42,7 +42,7 @@ export default function FontPairing() {
     <div>
       <div className="mb-8">
         <h1 className="section-title">Font Pairing</h1>
-        <p className="text-white/40">Beautiful Google Font pairings with live preview.</p>
+        <p className="text-gray-400">Beautiful Google Font pairings with live preview.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -63,7 +63,7 @@ export default function FontPairing() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {fontPairings.map((pairing, i) => (
-          <div key={i} className="bg-brand-card/50 rounded-xl border border-white/5 overflow-hidden">
+          <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
             <div
               className={`p-6 ${darkPreview ? 'bg-gray-900' : 'bg-white'}`}
             >
@@ -84,12 +84,12 @@ export default function FontPairing() {
             <div className="p-4">
               <div className="flex items-center justify-between mb-2">
                 <div>
-                  <span className="text-sm font-medium text-white/80">{pairing.heading}</span>
-                  <span className="text-white/20 mx-1.5">+</span>
-                  <span className="text-sm font-medium text-white/80">{pairing.body}</span>
+                  <span className="text-sm font-medium text-gray-700">{pairing.heading}</span>
+                  <span className="text-gray-400 mx-1.5">+</span>
+                  <span className="text-sm font-medium text-gray-700">{pairing.body}</span>
                 </div>
               </div>
-              <p className="text-xs text-white/40 mb-3">{pairing.description}</p>
+              <p className="text-xs text-gray-400 mb-3">{pairing.description}</p>
               <div className="flex gap-2">
                 <button
                   onClick={() => handleCopyImport(pairing, i)}

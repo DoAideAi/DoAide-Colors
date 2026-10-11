@@ -86,32 +86,32 @@ export default function GradientGenerator() {
       />
       <div className="mb-8">
         <h1 className="section-title">Gradient Generator</h1>
-        <p className="text-white/40">Create beautiful CSS gradients with live preview.</p>
+        <p className="text-gray-400">Create beautiful CSS gradients with live preview.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <div
-            className="w-full h-64 rounded-2xl border border-white/10 mb-6"
+            className="w-full h-64 rounded-2xl border border-gray-200 mb-6"
             style={{ background: gradientCSS }}
           />
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">CSS Code</span>
+              <span className="text-sm font-medium text-gray-500">CSS Code</span>
               <CopyButton text={fullCSS} label="Copy" />
             </div>
-            <pre className="text-sm font-mono text-brand-gold/80 whitespace-pre-wrap break-all">{fullCSS}</pre>
+            <pre className="text-sm font-mono text-brand-teal/80 whitespace-pre-wrap break-all">{fullCSS}</pre>
           </div>
 
           <div className="mb-6">
-            <span className="text-sm font-medium text-white/50 block mb-3">Presets</span>
+            <span className="text-sm font-medium text-gray-500 block mb-3">Presets</span>
             <div className="grid grid-cols-3 gap-2">
               {presets.map(p => (
                 <button
                   key={p.name}
                   onClick={() => loadPreset(p)}
-                  className="rounded-xl overflow-hidden border border-white/5 hover:border-brand-gold/30 transition-colors"
+                  className="rounded-xl overflow-hidden border border-gray-200 hover:border-brand-teal/30 transition-colors"
                 >
                   <div
                     className="h-12"
@@ -123,7 +123,7 @@ export default function GradientGenerator() {
                         : `conic-gradient(from ${p.angle}deg, ${p.stops.map(s => `${s.color} ${s.pos}%`).join(', ')})`,
                     }}
                   />
-                  <div className="bg-brand-card/80 px-2 py-1 text-xs text-white/50 text-center">{p.name}</div>
+                  <div className="bg-white px-2 py-1 text-xs text-gray-500 text-center">{p.name}</div>
                 </button>
               ))}
             </div>
@@ -132,14 +132,14 @@ export default function GradientGenerator() {
 
         <div className="space-y-6">
           <div>
-            <span className="text-sm font-medium text-white/50 block mb-3">Type</span>
+            <span className="text-sm font-medium text-gray-500 block mb-3">Type</span>
             <div className="flex gap-2">
               {['linear', 'radial', 'conic'].map(t => (
                 <button
                   key={t}
                   onClick={() => setType(t)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${
-                    type === t ? 'bg-brand-gold text-brand-darker' : 'bg-white/5 text-white/50 hover:bg-white/10'
+                    type === t ? 'bg-brand-teal text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-100'
                   }`}
                 >
                   {t}
@@ -150,7 +150,7 @@ export default function GradientGenerator() {
 
           {(type === 'linear' || type === 'conic') && (
             <div>
-              <span className="text-sm font-medium text-white/50 block mb-2">Angle: {angle}°</span>
+              <span className="text-sm font-medium text-gray-500 block mb-2">Angle: {angle}°</span>
               <input
                 type="range"
                 min="0"
@@ -164,7 +164,7 @@ export default function GradientGenerator() {
 
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-sm font-medium text-white/50">Color Stops</span>
+              <span className="text-sm font-medium text-gray-500">Color Stops</span>
               <div className="flex gap-2">
                 <button onClick={addStop} className="btn-secondary text-xs" disabled={stops.length >= 5}>
                   + Add Stop
@@ -177,7 +177,7 @@ export default function GradientGenerator() {
 
             <div className="space-y-3">
               {stops.map((stop, i) => (
-                <div key={i} className="flex items-center gap-3 bg-brand-card/30 rounded-xl p-3 border border-white/5">
+                <div key={i} className="flex items-center gap-3 bg-white/30 rounded-xl p-3 border border-gray-200">
                   <input
                     type="color"
                     value={stop.color}
@@ -202,12 +202,12 @@ export default function GradientGenerator() {
                       onChange={e => updateStop(i, 'pos', parseInt(e.target.value))}
                       className="w-full"
                     />
-                    <span className="text-xs text-white/30">{stop.pos}%</span>
+                    <span className="text-xs text-gray-400">{stop.pos}%</span>
                   </div>
                   {stops.length > 2 && (
                     <button
                       onClick={() => removeStop(i)}
-                      className="p-1.5 text-white/30 hover:text-red-400 transition-colors"
+                      className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

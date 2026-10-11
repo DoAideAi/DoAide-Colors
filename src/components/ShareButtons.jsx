@@ -4,12 +4,12 @@ export default function ShareButtons({ url, text = 'Check out this color palette
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-white/40 mr-1">Share:</span>
+      <span className="text-xs text-gray-400 mr-1">Share:</span>
       <a
         href={`https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-lg bg-white/5 hover:bg-green-500/20 text-white/50 hover:text-green-400 transition-colors"
+        className="p-2 rounded-lg bg-gray-100 hover:bg-green-500/20 text-gray-500 hover:text-green-400 transition-colors"
         title="Share on WhatsApp"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -20,7 +20,7 @@ export default function ShareButtons({ url, text = 'Check out this color palette
         href={`https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-lg bg-white/5 hover:bg-blue-500/20 text-white/50 hover:text-blue-400 transition-colors"
+        className="p-2 rounded-lg bg-gray-100 hover:bg-blue-500/20 text-gray-500 hover:text-blue-400 transition-colors"
         title="Share on Twitter"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

@@ -16,7 +16,7 @@ export default function CopyButton({ text, label, className = '' }) {
       className={`inline-flex items-center gap-1.5 text-sm transition-all duration-200 ${
         copied
           ? 'text-green-400'
-          : 'text-white/50 hover:text-white/80'
+          : 'text-gray-500 hover:text-gray-700'
       } ${className}`}
       title={`Copy ${label || text}`}
     >

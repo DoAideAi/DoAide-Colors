@@ -96,20 +96,20 @@ export default function ColorConverter() {
       />
       <div className="mb-8">
         <h1 className="section-title">Color Converter</h1>
-        <p className="text-white/40">Convert colors between HEX, RGB, HSL, and CMYK formats.</p>
+        <p className="text-gray-400">Convert colors between HEX, RGB, HSL, and CMYK formats.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <div className="mb-4">
-            <label className="block text-sm text-white/50 mb-2">Input Format</label>
+            <label className="block text-sm text-gray-500 mb-2">Input Format</label>
             <div className="flex gap-2">
               {formats.map(f => (
                 <button
                   key={f}
                   onClick={() => { setFormat(f); setInput(''); setError(false); }}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    format === f ? 'bg-brand-gold text-brand-darker' : 'bg-white/5 text-white/50 hover:bg-white/10'
+                    format === f ? 'bg-brand-teal text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-100'
                   }`}
                 >
                   {f}
@@ -119,7 +119,7 @@ export default function ColorConverter() {
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm text-white/50 mb-1.5">Enter {format} Value</label>
+            <label className="block text-sm text-gray-500 mb-1.5">Enter {format} Value</label>
             <input
               type="text"
               value={input}
@@ -136,10 +136,10 @@ export default function ColorConverter() {
 
           {valid && (
             <div
-              className="w-full h-40 rounded-2xl border border-white/10 flex items-end p-4"
+              className="w-full h-40 rounded-2xl border border-gray-200 flex items-end p-4"
               style={{ backgroundColor: hex }}
             >
-              <span className={`font-mono text-sm px-2 py-1 rounded ${isLightColor(hex) ? 'bg-black/20 text-black' : 'bg-white/20 text-white'}`}>
+              <span className={`font-mono text-sm px-2 py-1 rounded ${isLightColor(hex) ? 'bg-black/20 text-black' : 'bg-gray-200 text-white'}`}>
                 {hex.toUpperCase()} — {name}
               </span>
             </div>
@@ -150,11 +150,11 @@ export default function ColorConverter() {
           {valid ? (
             <div className="space-y-3">
               {outputs.map(o => (
-                <div key={o.label} className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+                <div key={o.label} className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-xs text-white/40 block mb-1">{o.label}</span>
-                      <span className="font-mono text-sm text-white/80">{o.value}</span>
+                      <span className="text-xs text-gray-400 block mb-1">{o.label}</span>
+                      <span className="font-mono text-sm text-gray-700">{o.value}</span>
                     </div>
                     <CopyButton text={o.value} />
                   </div>
@@ -162,7 +162,7 @@ export default function ColorConverter() {
               ))}
             </div>
           ) : (
-            <div className="flex items-center justify-center h-48 text-white/20">
+            <div className="flex items-center justify-center h-48 text-gray-400">
               Enter a valid color value to convert
             </div>
           )}

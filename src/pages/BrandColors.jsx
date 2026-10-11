@@ -26,7 +26,7 @@ export default function BrandColors() {
     <div>
       <div className="mb-8">
         <h1 className="section-title">Brand Colors</h1>
-        <p className="text-white/40">Curated color palettes from popular brands worldwide.</p>
+        <p className="text-gray-400">Curated color palettes from popular brands worldwide.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -36,7 +36,7 @@ export default function BrandColors() {
               key={cat}
               onClick={() => setCategory(cat)}
               className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${
-                category === cat ? 'bg-brand-gold text-brand-darker' : 'bg-white/5 text-white/50 hover:bg-white/10'
+                category === cat ? 'bg-brand-teal text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-100'
               }`}
             >
               {cat}
@@ -54,10 +54,10 @@ export default function BrandColors() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map(brand => (
-          <div key={brand.name} className="bg-brand-card/50 rounded-xl border border-white/5 p-4 hover:border-white/10 transition-colors">
+          <div key={brand.name} className="bg-white rounded-xl border border-gray-200 p-4 hover:border-gray-200 transition-colors">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-semibold text-white">{brand.name}</span>
-              <span className="text-xs text-white/30 capitalize">{brand.category}</span>
+              <span className="font-semibold text-gray-900">{brand.name}</span>
+              <span className="text-xs text-gray-400 capitalize">{brand.category}</span>
             </div>
             <div className="flex gap-2">
               {brand.colors.map((color, i) => {
@@ -65,14 +65,14 @@ export default function BrandColors() {
                 return (
                   <button
                     key={i}
-                    className="flex-1 h-16 rounded-lg flex items-center justify-center border border-white/5 hover:scale-105 transition-transform"
+                    className="flex-1 h-16 rounded-lg flex items-center justify-center border border-gray-200 hover:scale-105 transition-transform"
                     style={{ backgroundColor: color }}
                     onClick={() => handleCopy(color)}
                     title={`Copy ${color}`}
                   >
                     <span className={`text-[10px] font-mono ${
                       copiedColor === color ? 'font-bold' : ''
-                    } ${light ? 'text-black/60' : 'text-white/60'}`}>
+                    } ${light ? 'text-black/60' : 'text-gray-500'}`}>
                       {copiedColor === color ? 'Copied!' : color}
                     </span>
                   </button>
@@ -84,7 +84,7 @@ export default function BrandColors() {
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-12 text-white/20">No brands found matching your search.</div>
+        <div className="text-center py-12 text-gray-400">No brands found matching your search.</div>
       )}
     </div>
   );

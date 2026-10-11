@@ -61,7 +61,7 @@ export default function ShadowGenerator() {
     <div>
       <div className="mb-8">
         <h1 className="section-title">CSS Shadow Generator</h1>
-        <p className="text-white/40">Create beautiful box shadows with live preview.</p>
+        <p className="text-gray-400">Create beautiful box shadows with live preview.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -73,16 +73,16 @@ export default function ShadowGenerator() {
             />
           </div>
 
-          <div className="bg-brand-card/50 rounded-xl p-4 border border-white/5 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-white/50">CSS Code</span>
+              <span className="text-sm font-medium text-gray-500">CSS Code</span>
               <CopyButton text={fullCSS} label="Copy" />
             </div>
-            <pre className="text-sm font-mono text-brand-gold/80 whitespace-pre-wrap">{fullCSS}</pre>
+            <pre className="text-sm font-mono text-brand-teal/80 whitespace-pre-wrap">{fullCSS}</pre>
           </div>
 
           <div>
-            <span className="text-sm font-medium text-white/50 block mb-3">Presets</span>
+            <span className="text-sm font-medium text-gray-500 block mb-3">Presets</span>
             <div className="flex flex-wrap gap-2">
               {presets.map(p => (
                 <button key={p.name} onClick={() => loadPreset(p)} className="btn-secondary text-xs">
@@ -98,7 +98,7 @@ export default function ShadowGenerator() {
 
         <div>
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-white/50">Shadow Layers</span>
+            <span className="text-sm font-medium text-gray-500">Shadow Layers</span>
             <button onClick={addLayer} className="btn-secondary text-xs" disabled={layers.length >= 5}>
               + Add Layer
             </button>
@@ -106,11 +106,11 @@ export default function ShadowGenerator() {
 
           <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
             {layers.map((layer, i) => (
-              <div key={i} className="bg-brand-card/50 rounded-xl p-4 border border-white/5">
+              <div key={i} className="bg-white rounded-xl p-4 border border-gray-200">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-white/60">Layer {i + 1}</span>
+                  <span className="text-sm font-medium text-gray-500">Layer {i + 1}</span>
                   {layers.length > 1 && (
-                    <button onClick={() => removeLayer(i)} className="text-white/30 hover:text-red-400 transition-colors">
+                    <button onClick={() => removeLayer(i)} className="text-gray-400 hover:text-red-400 transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -120,35 +120,35 @@ export default function ShadowGenerator() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="text-xs text-white/30">X Offset: {layer.x}px</label>
+                    <label className="text-xs text-gray-400">X Offset: {layer.x}px</label>
                     <input type="range" min="-50" max="50" value={layer.x} onChange={e => updateLayer(i, 'x', parseInt(e.target.value))} className="w-full" />
                   </div>
                   <div>
-                    <label className="text-xs text-white/30">Y Offset: {layer.y}px</label>
+                    <label className="text-xs text-gray-400">Y Offset: {layer.y}px</label>
                     <input type="range" min="-50" max="50" value={layer.y} onChange={e => updateLayer(i, 'y', parseInt(e.target.value))} className="w-full" />
                   </div>
                   <div>
-                    <label className="text-xs text-white/30">Blur: {layer.blur}px</label>
+                    <label className="text-xs text-gray-400">Blur: {layer.blur}px</label>
                     <input type="range" min="0" max="100" value={layer.blur} onChange={e => updateLayer(i, 'blur', parseInt(e.target.value))} className="w-full" />
                   </div>
                   <div>
-                    <label className="text-xs text-white/30">Spread: {layer.spread}px</label>
+                    <label className="text-xs text-gray-400">Spread: {layer.spread}px</label>
                     <input type="range" min="-50" max="50" value={layer.spread} onChange={e => updateLayer(i, 'spread', parseInt(e.target.value))} className="w-full" />
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4 mt-3">
                   <div className="flex items-center gap-2">
-                    <label className="text-xs text-white/30">Color</label>
+                    <label className="text-xs text-gray-400">Color</label>
                     <input type="color" value={layer.color} onChange={e => updateLayer(i, 'color', e.target.value)} className="w-8 h-8 rounded" />
                   </div>
                   <div className="flex-1">
-                    <label className="text-xs text-white/30">Opacity: {layer.opacity}%</label>
+                    <label className="text-xs text-gray-400">Opacity: {layer.opacity}%</label>
                     <input type="range" min="0" max="100" value={layer.opacity} onChange={e => updateLayer(i, 'opacity', parseInt(e.target.value))} className="w-full" />
                   </div>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input type="checkbox" checked={layer.inset} onChange={e => updateLayer(i, 'inset', e.target.checked)} className="rounded" />
-                    <span className="text-xs text-white/40">Inset</span>
+                    <span className="text-xs text-gray-400">Inset</span>
                   </label>
                 </div>
               </div>

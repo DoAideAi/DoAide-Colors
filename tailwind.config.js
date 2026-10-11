@@ -8,11 +8,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          gold: '#F0B429',
-          dark: '#1a1a2e',
-          darker: '#0f0f1a',
-          card: '#16213e',
-          accent: '#e94560',
+          teal: '#0D9488',
+          'teal-light': '#14B8A6',
+          'teal-dark': '#0F766E',
+          surface: '#FFFFFF',
+          'surface-alt': '#F8FAFB',
+          card: '#FFFFFF',
+          text: '#1E293B',
+          'text-secondary': '#64748B',
+          border: '#E2E8F0',
+          accent: '#0D9488',
         },
       },
       fontFamily: {

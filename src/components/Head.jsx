@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function Head({ title, description, path, jsonLd }) {
   useEffect(() => {
-    const fullTitle = title ? `${title} — DoAide Colors` : 'DoAide Colors — Free Color Tools for Designers';
+    const fullTitle = title ? `${title} — DoAide | Colors` : 'DoAide | Colors — Free Color Tools for Designers';
     document.title = fullTitle;
 
     const setMeta = (attr, key, content) => {

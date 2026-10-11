@@ -35,7 +35,7 @@ const tools = [
     title: 'Image Color Extractor',
     desc: 'Upload an image and extract a dominant color palette — perfect for moodboards.',
     icon: '📷',
-    gradient: 'from-amber-500/20 to-yellow-500/20',
+    gradient: 'from-teal-500/20 to-cyan-500/20',
   },
   {
     path: '/converter',
@@ -94,11 +94,12 @@ export default function Home() {
         }}
       />
       <section className="text-center py-12 md:py-20">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">
-          <span>DoAide </span>
-          <span className="italic text-brand-gold" style={{ fontFamily: "'Playfair Display', serif" }}>Colors</span>
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+          <span className="text-brand-teal">DoAide</span>
+          <span className="text-gray-400 mx-2">|</span>
+          <span className="text-gray-800">Colors</span>
         </h1>
-        <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-8">
+        <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-8">
           Free color tools for designers and developers. Generate palettes, create gradients, check contrast, extract colors from images — no login, no limits.
         </p>
         <div className="flex items-center justify-center gap-3 flex-wrap">
@@ -121,10 +122,10 @@ export default function Home() {
             <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.gradient} flex items-center justify-center text-2xl mb-4`}>
               {tool.icon}
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-brand-gold transition-colors">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-brand-teal transition-colors">
               {tool.title}
             </h3>
-            <p className="text-sm text-white/40 leading-relaxed">
+            <p className="text-sm text-gray-500 leading-relaxed">
               {tool.desc}
             </p>
           </Link>

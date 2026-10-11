@@ -15,17 +15,29 @@ const navLinks = [
   { path: '/blog', label: 'Blog' },
 ];
 
+const doaideProducts = [
+  { name: 'Colors', href: 'https://colors.doaide.com' },
+  { name: 'PDF', href: 'https://pdf.doaide.com' },
+  { name: 'Invoice', href: 'https://invoice.doaide.com' },
+  { name: 'Resume', href: 'https://resume.doaide.com' },
+  { name: 'QR', href: 'https://qr.doaide.com' },
+  { name: 'Draw', href: 'https://draw.doaide.com' },
+  { name: 'Docs', href: 'https://docs.doaide.com' },
+  { name: 'Convert', href: 'https://convert.doaide.com' },
+];
+
 export default function Layout() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-brand-darker">
-      <header className="sticky top-0 z-50 bg-brand-darker/90 backdrop-blur border-b border-white/5">
+    <div className="min-h-screen bg-[var(--da-surface-alt)] flex flex-col">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 no-underline">
-            <span className="text-xl font-bold text-white">DoAide</span>
-            <span className="text-xl font-bold italic text-brand-gold">Colors</span>
+            <span className="text-xl font-bold text-brand-teal">DoAide</span>
+            <span className="text-xl font-bold text-gray-400 mx-0.5">|</span>
+            <span className="text-xl font-bold text-gray-800">Colors</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -35,8 +47,8 @@ export default function Layout() {
                 to={link.path}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors no-underline ${
                   location.pathname === link.path
-                    ? 'bg-brand-gold/20 text-brand-gold'
-                    : 'text-white/60 hover:text-white hover:bg-white/5'
+                    ? 'bg-brand-teal/10 text-brand-teal'
+                    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
                 }`}
               >
                 {link.label}
@@ -45,7 +57,7 @@ export default function Layout() {
           </nav>
 
           <button
-            className="lg:hidden p-2 text-white/70 hover:text-white"
+            className="lg:hidden p-2 text-gray-500 hover:text-gray-900"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
@@ -59,7 +71,7 @@ export default function Layout() {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden border-t border-white/5 bg-brand-darker/95 backdrop-blur">
+          <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur">
             <div className="px-4 py-3 flex flex-wrap gap-2">
               {navLinks.map(link => (
                 <Link
@@ -68,8 +80,8 @@ export default function Layout() {
                   onClick={() => setMenuOpen(false)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors no-underline ${
                     location.pathname === link.path
-                      ? 'bg-brand-gold/20 text-brand-gold'
-                      : 'text-white/60 hover:text-white hover:bg-white/5'
+                      ? 'bg-brand-teal/10 text-brand-teal'
+                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
                   {link.label}
@@ -80,22 +92,39 @@ export default function Layout() {
         )}
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
         <Outlet />
       </main>
 
-      <footer className="border-t border-white/5 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-1.5">
-            <span className="text-sm text-white/40">Made with</span>
-            <span className="text-brand-gold">&#9829;</span>
-            <span className="text-sm text-white/40">by</span>
-            <a href="https://doaide.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-brand-gold transition-colors no-underline">
-              DoAide
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-xs text-white/30">Free forever. No login required.</span>
+      <footer className="border-t border-gray-200 bg-white mt-auto">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-sm font-semibold text-brand-teal">DoAide</span>
+                <span className="text-xs bg-brand-teal/10 text-brand-teal px-2 py-0.5 rounded-full font-medium">A DoAide Product</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                {doaideProducts.map(p => (
+                  <a
+                    key={p.name}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm transition-colors no-underline ${
+                      p.name === 'Colors'
+                        ? 'text-brand-teal font-medium'
+                        : 'text-gray-400 hover:text-brand-teal'
+                    }`}
+                  >
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-xs text-gray-400">Free forever. No login required.</span>
+            </div>
           </div>
         </div>
       </footer>
