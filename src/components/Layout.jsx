@@ -57,8 +57,9 @@ export default function Layout() {
           </nav>
 
           <button
-            className="lg:hidden p-2 text-gray-500 hover:text-gray-900"
+            className="lg:hidden p-2 min-h-[48px] min-w-[48px] flex items-center justify-center text-gray-500 hover:text-gray-900"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
               {menuOpen ? (
@@ -78,7 +79,7 @@ export default function Layout() {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors no-underline ${
+                  className={`inline-flex items-center px-3 py-1.5 min-h-[48px] rounded-lg text-sm font-medium transition-colors no-underline ${
                     location.pathname === link.path
                       ? 'bg-brand-teal/10 text-brand-teal'
                       : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
