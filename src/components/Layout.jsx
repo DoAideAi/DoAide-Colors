@@ -1,5 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import useSEO from '../hooks/useSEO';
 
 const navLinks = [
   { path: '/palette', label: 'Palette' },
@@ -28,6 +29,7 @@ const doaideProducts = [
 
 export default function Layout() {
   const location = useLocation();
+  useSEO(location.pathname.replace(/\/+$/, '') || '/');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

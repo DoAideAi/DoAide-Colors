@@ -1,58 +1,11 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
+import { blogFaqs } from '../../data/blogFaqs';
 
 export default function ColorPsychologyMarketing() {
-  const faqData = [
-    {
-      question: 'What is color psychology in marketing?',
-      answer: 'Color psychology in marketing is the study of how colors influence consumer perceptions, emotions, and purchasing behavior. Brands use specific colors strategically to evoke desired feelings — blue for trust, red for urgency, green for health — that align with their product positioning and drive conversions.',
-    },
-    {
-      question: 'Which color increases sales the most?',
-      answer: 'Red is widely associated with the highest conversion rates for call-to-action buttons and sale signage because it creates urgency and excitement. However, the most effective color depends on context: contrast with surrounding elements often matters more than the specific hue. A/B testing with tools like a contrast checker is essential.',
-    },
-    {
-      question: 'How do I choose brand colors for my business?',
-      answer: 'Start by identifying the emotions you want customers to associate with your brand. Research your industry — finance favors blue, wellness favors green, luxury favors black and gold. Then use a palette generator to create a harmonious color scheme with primary, secondary, and accent colors that pass accessibility contrast requirements.',
-    },
-    {
-      question: 'Does color affect online buying decisions?',
-      answer: 'Yes. Studies show that up to 90% of snap judgments about products are based on color alone. The right color palette builds trust, guides attention to CTAs, and reinforces brand recognition. Poor color choices — low contrast, clashing combinations, or colors misaligned with brand values — can increase bounce rates and reduce conversions.',
-    },
-  ];
-
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: 'Color Psychology in Marketing: How Colors Influence Buying Decisions',
-      description: 'Discover how color psychology drives consumer behavior, brand perception, and conversions. Learn which colors boost sales and how to choose the right palette for your marketing.',
-      datePublished: '2026-10-10',
-      dateModified: '2026-10-10',
-      author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      mainEntityOfPage: 'https://colors.doaide.com/blog/color-psychology-marketing',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqData.map(faq => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
-    },
-  ];
+  const faqData = blogFaqs['color-psychology-marketing'];
 
   return (
     <div>
-      <Head
-        title="Color Psychology in Marketing: How Colors Influence Buying Decisions"
-        description="Discover how color psychology drives consumer behavior, brand perception, and conversions. Learn which colors boost sales and how to choose the right palette for your marketing."
-        path="/blog/color-psychology-marketing"
-        jsonLd={jsonLd}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

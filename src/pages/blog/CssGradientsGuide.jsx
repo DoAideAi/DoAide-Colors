@@ -1,25 +1,8 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
 
 export default function CssGradientsGuide() {
   return (
     <div>
-      <Head
-        title="CSS Gradients: Linear, Radial, and Conic — The Complete Guide"
-        description="Everything you need to know about CSS gradients — syntax, examples, browser support, and creative techniques for modern web design."
-        path="/blog/css-gradients-complete-guide"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: 'CSS Gradients: Linear, Radial, and Conic — The Complete Guide',
-          description: 'Everything you need to know about CSS gradients — syntax, examples, browser support, and creative techniques for modern web design.',
-          datePublished: '2026-10-08',
-          author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          mainEntityOfPage: 'https://colors.doaide.com/blog/css-gradients-complete-guide',
-        }}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

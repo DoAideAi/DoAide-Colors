@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Head from '../components/Head';
 
 const tools = [
   {
@@ -77,22 +76,6 @@ const tools = [
 export default function Home() {
   return (
     <div>
-      <Head
-        title="Free Color Tools for Designers & Developers"
-        description="Generate color palettes, CSS gradients, check WCAG contrast, convert hex/rgb/hsl, extract colors from images — all free, no login required."
-        path="/"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'WebApplication',
-          name: 'DoAide Colors',
-          url: 'https://colors.doaide.com',
-          description: 'Free color tools for designers and developers — palette generator, gradient maker, contrast checker, color converter.',
-          applicationCategory: 'DesignApplication',
-          operatingSystem: 'Any',
-          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-        }}
-      />
       <section className="text-center py-12 md:py-20">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
           <span className="text-brand-teal">DoAide</span>

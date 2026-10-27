@@ -1,58 +1,11 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
+import { blogFaqs } from '../../data/blogFaqs';
 
 export default function BrandColorPaletteGuide() {
-  const faqData = [
-    {
-      question: 'How many colors should a brand palette have?',
-      answer: 'A complete brand color palette typically has 5 to 8 colors: one primary brand color, one or two secondary colors, one accent color, and 3-4 neutrals (light background, dark text, medium gray, and a border/divider shade). Some brands add semantic colors for success, warning, and error states, bringing the total to 10-12.',
-    },
-    {
-      question: 'What is the 60-30-10 rule in branding?',
-      answer: 'The 60-30-10 rule is a proportion guideline for applying brand colors. Use your dominant color for 60% of visual space (backgrounds, large surfaces), your secondary color for 30% (navigation, cards, content blocks), and your accent for 10% (buttons, links, highlights). This creates visual hierarchy and prevents any single color from overwhelming the design.',
-    },
-    {
-      question: 'Can I use a color palette generator for my brand?',
-      answer: 'Yes. A palette generator is an excellent starting point — it applies color theory rules (complementary, analogous, triadic) to produce harmonious combinations from a single base color. However, always refine the generated palette by testing it in real design contexts, checking contrast ratios for accessibility, and ensuring it aligns with your brand personality and industry expectations.',
-    },
-    {
-      question: 'How do I test if my brand colors are accessible?',
-      answer: 'Use a contrast checker to verify that every text-background pair meets WCAG AA requirements (4.5:1 for normal text, 3:1 for large text). Also test your palette under simulated color blindness conditions — protanopia, deuteranopia, and tritanopia — to ensure critical information is not conveyed by color alone. Add patterns, icons, or labels as secondary indicators.',
-    },
-  ];
-
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: 'How to Create a Brand Color Palette: Step-by-Step Guide',
-      description: 'Learn how to build a brand color palette from scratch — from choosing a primary color to testing accessibility. A complete step-by-step guide with free tools.',
-      datePublished: '2026-10-10',
-      dateModified: '2026-10-10',
-      author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      mainEntityOfPage: 'https://colors.doaide.com/blog/brand-color-palette-guide',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqData.map(faq => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
-    },
-  ];
+  const faqData = blogFaqs['brand-color-palette-guide'];
 
   return (
     <div>
-      <Head
-        title="How to Create a Brand Color Palette: Step-by-Step Guide"
-        description="Learn how to build a brand color palette from scratch — from choosing a primary color to testing accessibility. A complete step-by-step guide with free tools."
-        path="/blog/brand-color-palette-guide"
-        jsonLd={jsonLd}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

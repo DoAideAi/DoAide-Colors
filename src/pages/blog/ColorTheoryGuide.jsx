@@ -1,25 +1,8 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
 
 export default function ColorTheoryGuide() {
   return (
     <div>
-      <Head
-        title="Color Theory for UI Design: How to Pick Colors That Work"
-        description="Master color harmonies, psychology, and practical palette-building techniques for modern UI design — with free tools to generate your own palettes."
-        path="/blog/color-theory-for-ui-design"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: 'Color Theory for UI Design: How to Pick Colors That Work',
-          description: 'Master color harmonies, psychology, and practical palette-building techniques for modern UI design.',
-          datePublished: '2026-10-05',
-          author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          mainEntityOfPage: 'https://colors.doaide.com/blog/color-theory-for-ui-design',
-        }}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

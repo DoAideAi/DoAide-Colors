@@ -1,25 +1,8 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
 
 export default function WcagContrastGuide() {
   return (
     <div>
-      <Head
-        title="WCAG Color Contrast: A Complete Guide for Web Accessibility"
-        description="Learn WCAG 2.1 AA and AAA color contrast requirements, how to test your designs, and practical tips to make your website accessible to all users."
-        path="/blog/wcag-color-contrast-guide"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: 'WCAG Color Contrast: A Complete Guide for Web Accessibility',
-          description: 'Learn WCAG 2.1 AA and AAA color contrast requirements, how to test your designs, and practical tips to make your website accessible.',
-          datePublished: '2026-10-01',
-          author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-          mainEntityOfPage: 'https://colors.doaide.com/blog/wcag-color-contrast-guide',
-        }}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

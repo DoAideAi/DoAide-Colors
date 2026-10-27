@@ -1,58 +1,11 @@
 import { Link } from 'react-router-dom';
-import Head from '../../components/Head';
+import { blogFaqs } from '../../data/blogFaqs';
 
 export default function BestColorCombinations2026() {
-  const faqData = [
-    {
-      question: 'What are the best color combinations for websites in 2026?',
-      answer: 'The top website color combinations in 2026 include deep navy paired with warm coral accents, sage green with cream neutrals, rich purple with soft gold, dark charcoal with electric blue, and warm terracotta with dusty rose. These palettes balance modern aesthetics with strong contrast ratios for accessibility compliance.',
-    },
-    {
-      question: 'How many colors should a website use?',
-      answer: 'Most effective websites use 3 to 5 colors: one dominant background color (60%), a secondary color for cards and sections (30%), and an accent for buttons and interactive elements (10%). Add 2-3 neutral grays for text and borders. Too many colors create visual noise and weaken brand recognition.',
-    },
-    {
-      question: 'What color combination gets the most clicks?',
-      answer: 'High-contrast combinations where the CTA button color appears nowhere else on the page generate the most clicks. Specifically, orange or red buttons on white or light-gray backgrounds consistently outperform other combinations in A/B tests, but the key factor is contrast with the surrounding design, not the button color in isolation.',
-    },
-    {
-      question: 'How do I make sure my color combination is accessible?',
-      answer: 'Test every text-background pair for a minimum 4.5:1 contrast ratio (WCAG AA standard). Use a contrast checker tool to verify ratios for both normal and large text. Also consider color-blind users — never rely on color alone to convey information. Add icons, labels, or patterns as secondary indicators.',
-    },
-  ];
-
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: 'Best Color Combinations for Website Design 2026',
-      description: 'Explore the top color palettes and combinations for website design in 2026. Get ready-to-use hex codes, contrast ratios, and CSS snippets for modern web projects.',
-      datePublished: '2026-10-10',
-      dateModified: '2026-10-10',
-      author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-      mainEntityOfPage: 'https://colors.doaide.com/blog/best-color-combinations-2026',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqData.map(faq => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
-    },
-  ];
+  const faqData = blogFaqs['best-color-combinations-2026'];
 
   return (
     <div>
-      <Head
-        title="Best Color Combinations for Website Design 2026"
-        description="Explore the top color palettes and combinations for website design in 2026. Get ready-to-use hex codes, contrast ratios, and CSS snippets for modern web projects."
-        path="/blog/best-color-combinations-2026"
-        jsonLd={jsonLd}
-      />
-
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-sm text-gray-400 hover:text-brand-teal transition-colors no-underline mb-6 inline-block">&larr; Back to Blog</Link>
 

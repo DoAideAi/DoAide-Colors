@@ -1,24 +1,9 @@
 import { Link } from 'react-router-dom';
-import Head from '../components/Head';
 import { blogPosts } from '../data/blogPosts';
 
 export default function Blog() {
   return (
     <div>
-      <Head
-        title="Blog"
-        description="Color theory, accessibility guides, and design tips from DoAide Colors. Learn WCAG contrast, CSS gradients, palette building, and more."
-        path="/blog"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Blog',
-          name: 'DoAide Colors Blog',
-          url: 'https://colors.doaide.com/blog',
-          description: 'Color theory, accessibility guides, and design tips for designers and developers.',
-          publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
-        }}
-      />
-
       <div className="mb-8">
         <h1 className="section-title">Blog</h1>
         <p className="text-gray-400">Color theory, accessibility, and design tips for modern web projects.</p>
